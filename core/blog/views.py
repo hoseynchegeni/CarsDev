@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, DetailView
+from django.views.generic import TemplateView, DetailView, CreateView
 from .models import Post
 from products.models import Car, ProductCategory
 # Create your views here.
@@ -16,3 +16,7 @@ class Index(TemplateView):
 class PostDetailView(DetailView):
     model = Post
 
+class PostCreateView(CreateView):
+    model = Post
+    fields = ['author','title','content','status','is_news','published_date']
+    success_url = '/home/'
