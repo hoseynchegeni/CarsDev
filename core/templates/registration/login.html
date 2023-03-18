@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-<h3><a href=""></a></h3>
+    <form method="post">
+        {%csrf_token%}
+        {{form.as_p}}
+        <input type="submit" value="Login">
+    </form>
 </body>
 </html>
