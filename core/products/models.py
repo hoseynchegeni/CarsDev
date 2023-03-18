@@ -41,7 +41,7 @@ class Product(models.Model):
     description = models.TextField()
     color = ColorField()
     size = models.IntegerField()
-    image = models.ImageField()
+    image = models.ImageField(blank= True, null= True)
     status = models.BooleanField()
     is_guaranteed = models.BooleanField()
     price = MoneyField(max_digits=14, decimal_places=2, default_currency= 'USD')
@@ -57,7 +57,7 @@ class Product(models.Model):
 
 class ProductCategory(models.Model):
     name = models.CharField(max_length= 200)
-    image = models.ImageField()
+    image = models.ImageField(blank= True, null= True)
 
     def __str__(self):
         return self.name

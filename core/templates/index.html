@@ -19,5 +19,9 @@
     <a href="{% url 'products:CarDetail' pk=k.id %}"> {{k.name}}</a><br>
     {%endfor%}
     <h1>--------------</h1>
+    {%for l in categories%}
+    <a href="{% url 'products:category' id=l.id%}">{{l.name}}</a><br>
+    {%endfor%}
+    <h1>--------------</h1>
 </body>
 </html>
