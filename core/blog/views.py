@@ -15,8 +15,3 @@ class Index(TemplateView):
     
 class PostDetailView(DetailView):
     model = Post
-
-class PostCreateView(CreateView):
-    model = Post
-    fields = ['author','title','content','status','is_news','published_date']
-    success_url = '/home/'

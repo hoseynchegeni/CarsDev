@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # Third Party Apps
     'colorfield',
     'djmoney',
+    'phone_field',
 
 ]
 

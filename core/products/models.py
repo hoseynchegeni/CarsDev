@@ -1,6 +1,7 @@
 from django.db import models
 from colorfield.fields import ColorField
 from djmoney.models.fields import MoneyField
+from phone_field import PhoneField
 
 # Create your models here.
 class Car(models.Model):
@@ -61,3 +62,19 @@ class ProductCategory(models.Model):
 
     def __str__(self):
         return self.name
+    
+class Services(models.Model):
+    typeChoices = (
+        ('a','a'),
+        ('b','b'),
+        ('c','c'),
+        ('d','d'),
+    )
+
+    type = models.CharField(max_length=2, choices= typeChoices)
+    phone = PhoneField()
+    car_name = models.CharField(max_length= 255)
+    reserve_for = models.DateTimeField()
+
+    def __str__(self):
+        return f'{self.type} / {self.car_name}'
