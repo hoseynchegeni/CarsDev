@@ -18,6 +18,20 @@
     <p><a href="{% url 'products:service' %}">Service Reserve</a></p>
     <p>----------------------------</p>
     <h3>Categories</h3>
-    
+    {%for i in categories%}
+       <a href="{%url 'products:category' id=i.id %}">{{i.name}}</a>
+    {%endfor%}
+    <p>----------------------------</p>
+    <h3>Service Reserve part</h3>
+    <p>----------------------------</p>
+    <h3>Products and discounts</h3>
+    {%for i in products%}
+         <a href="{%url 'products:ProductsDetail' pk=i.id %}">{{i.name}}</a>
+    {%endfor%}
+    <p>----------------------------</p>
+    <h3>cars</h3>
+    {%for i in cars%}
+        <a href="{%url 'products:CarDetail' pk=i.id %}">{{i.name}}</a>
+    {%endfor%}
 </body>
 </html>

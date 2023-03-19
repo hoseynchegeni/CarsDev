@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, DetailView, CreateView
 from .models import Post
-from products.models import Car, ProductCategory
+from products.models import Car, ProductCategory,Product
 # Create your views here.
 class Index(TemplateView):
     template_name = 'index.html'
@@ -11,6 +11,7 @@ class Index(TemplateView):
         context['news'] = Post.objects.filter(status = True, is_news = True)
         context['cars'] = Car.objects.all()
         context['categories'] = ProductCategory.objects.all()
+        context['products']= Product.objects.filter(status = True)
         return context
     
 class PostDetailView(DetailView):

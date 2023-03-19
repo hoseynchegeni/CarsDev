@@ -21,6 +21,9 @@ class ProductsView(ListView):
     queryset = Product.objects.filter(status = True)
     context_object_name = "products"
 
+class ProductDetailView(DetailView):
+    model = Product
+
 class ServiceReserve(CreateView):
     model = Services
     fields = ['type','phone','car_name','reserve_for',]
