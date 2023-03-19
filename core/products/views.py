@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import DetailView,ListView
+from django.views.generic import DetailView,ListView, CreateView
 from django.views import View 
-from .models import Car, ProductCategory, Product
+from .models import Car, ProductCategory, Product, Services
 # Create your views here.
 class CarListView(ListView):
     model = Car
@@ -20,3 +20,8 @@ class ProductsView(ListView):
     model = Product
     queryset = Product.objects.filter(status = True)
     context_object_name = "products"
+
+class ServiceReserve(CreateView):
+    model = Services
+    fields = ['type','phone','car_name','reserve_for',]
+    success_url = "/home/"
