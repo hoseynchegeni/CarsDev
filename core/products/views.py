@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import DetailView, ListView, CreateView
 from django.views import View
 from .models import Car, ProductCategory, Product, Services
-
+from django.db.models import Q
 
 # Create your views here.
 class CarListView(ListView):
@@ -19,6 +19,14 @@ class CategoryView(View):
     def get(self, request, id):
         obj = Product.objects.filter(category_id=id)
         return render(request, "products/category.html", {"obj": obj})
+    
+class SearchResultView(ListView):
+    model = ProductCategory
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        return ProductCategory.objects.filter(
+            Q(name__contains = query)
+        )
 
 
 class ProductsView(ListView):

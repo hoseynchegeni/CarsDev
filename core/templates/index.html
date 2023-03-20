@@ -9,8 +9,8 @@
 <body>
     <h3>Navbar</h3>
     <p><a href="/accounts/login/">Login</a><br></p>
-    <form method="post">
-        <input type="text" placeholder="Search">
+    <form action="{% url 'products:search' %}" method="get">
+        <input name="q" type="text" placeholder="Search">
         <button>Go</button>
     </form>
     <p><a href="{%url 'products:cars' %}">New Car Pricing</a></p>
