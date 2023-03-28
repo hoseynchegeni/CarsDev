@@ -8,18 +8,13 @@
 </head>
 <body>
     <h3>Navbar</h3>
-    <p><a href="/accounts/login/">Login</a><br></p>
-    <form action="{% url 'products:search' %}" method="get">
-        <input name="q" type="text" placeholder="Search">
-        <button>Go</button>
-    </form>
-    <p><a href="{%url 'products:cars' %}">New Car Pricing</a></p>
-    <p><a href="{% url 'products:products'%}">Products</a></p>
-    <p><a href="{% url 'products:service' %}">Service Reserve</a></p>
+
+
+
     <p>----------------------------</p>
     <h3>Categories</h3>
     {%for i in categories%}
-        <img src="{{i.image.url}}"
+        <img src="{{i.image.url}}">
        <a href="{%url 'products:category' id=i.id %}">{{i.name}}</a>
     {%endfor%}
     <p>----------------------------</p>
