@@ -19,6 +19,7 @@
     <p>----------------------------</p>
     <h3>Categories</h3>
     {%for i in categories%}
+        <img src="{{i.image.url}}"
        <a href="{%url 'products:category' id=i.id %}">{{i.name}}</a>
     {%endfor%}
     <p>----------------------------</p>
