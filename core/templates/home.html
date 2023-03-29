@@ -10,6 +10,10 @@
     <title>Document</title>
 </head>
 <style>
+  ul, li{
+    display: inline-block;
+    margin: auto;
+  }
     .site-footer
 {
   background-color:#26272b;
@@ -222,7 +226,7 @@
       <ul class="ptype-grid -col-9 -center">
         <li class="li" data-lazy-load-enabled="1">
             <img class="ptype-grid-img -departments lazy-loaded -no-touch" src="{{i.image.url}}"alt="Interior" style="opacity: 1;">
-              <p>{{i.name}}</p>
+              <p><a href="{% url 'products:category' id=i.id %}">{{i.name}}</a></p>
         </li>
     </ul>
     {%endfor%}
