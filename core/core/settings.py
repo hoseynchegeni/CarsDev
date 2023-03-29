@@ -132,7 +132,7 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 STATIC_DIRS = [
     BASE_DIR / "StaticFiles",
-]
+ ]
 
 
 # Default primary key field type
