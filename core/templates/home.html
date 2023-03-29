@@ -218,10 +218,14 @@
           <h5 class="text-white h4">Cars v1.0</h5>
         </div>
       </nav>
-        {%block category%}
-        {%endblock%}
-        {%block product%}
-        {%endblock%}
+      {%for i in categories%}
+      <ul class="ptype-grid -col-9 -center">
+        <li class="li" data-lazy-load-enabled="1">
+            <img class="ptype-grid-img -departments lazy-loaded -no-touch" src="{{i.image.url}}"alt="Interior" style="opacity: 1;">
+              <p>{{i.name}}</p>
+        </li>
+    </ul>
+    {%endfor%}
       <br>
       <br>
       <br>
