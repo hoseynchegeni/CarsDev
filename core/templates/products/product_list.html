@@ -10,6 +10,9 @@
     <title>doc</title>
 </head>
 <style>
+.card{
+    display: inline-block;
+}
     .site-footer
 {
   background-color:#26272b;
@@ -218,8 +221,15 @@
           <h5 class="text-white h4">Cars v1.0</h5>
         </div>
       </nav>
-     {%for i in products%}
-      <p><a href="{% url 'products:ProductsDetail' pk=i.id %}">{{i.name}}</a></p>
+      {%for i in products%}
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{i.image.url}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{i.name}}</h5>
+          <p class="card-text">{{i.price}}</p>
+         <a href="{% url 'products:ProductsDetail' pk=i.id %}" class="btn btn-primary">Details</a>
+        </div>
+      </div>
       {%endfor%}
       <br>
       <br>
